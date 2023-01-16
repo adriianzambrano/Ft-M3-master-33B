@@ -2,6 +2,11 @@ var http = require('http');
 var fs   = require('fs');
 
 http.createServer( function(req, res){ 
+	if( req.url === '/33b'){ //Si la URL es / devolvemos el HTML
+		res.writeHead(200, { 'Content-Type':'text/html' })
+		var html = fs.readFileSync(__dirname +'/html/index.html');
+		res.end("Hola MUndo Prueba 33b");
+	}
 	if( req.url === '/'){ //Si la URL es / devolvemos el HTML
 		res.writeHead(200, { 'Content-Type':'text/html' })
 		var html = fs.readFileSync(__dirname +'/html/index.html');

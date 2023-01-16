@@ -9,5 +9,5 @@ http.createServer( function(req, res){
 	html = html.replace('{nombre}', nombre); // Usamos el método replace es del objeto String
 	res.end(html);
 
-
+ 
 }).listen(1337, '127.0.0.1');
